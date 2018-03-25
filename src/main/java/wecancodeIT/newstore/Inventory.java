@@ -14,15 +14,21 @@ public class Inventory {
 
 	private String name;
 
+	private String description;
+
 	@ManyToOne
 	private Category category;
+
+	public long getId() {
+		return id;
+	}
 
 	public String getName() {
 		return name;
 	}
 
-	public long getId() {
-		return id;
+	public String getDescription() {
+		return description;
 	}
 
 	@SuppressWarnings("unused") // needed for JSON/JPA
@@ -33,8 +39,9 @@ public class Inventory {
 		this.name = name;
 	}
 
-	public Inventory(String name, Category category) {
+	public Inventory(String name, String description, Category category) {
 		this.name = name;
+		this.description = description;
 		this.category = category;
 	}
 }

@@ -20,11 +20,11 @@ public class ProductPopulator implements CommandLineRunner {
 		sticks = categoryRepo.save(sticks);
 		Category threeInOne = new Category("Three in One");
 		threeInOne = categoryRepo.save(threeInOne);
-		Inventory stick1 = new Inventory("Oak Stick", sticks);
+		Inventory stick1 = new Inventory("Oak Stick", "Ugly Stick", sticks);
 		stick1 = inventoryRepo.save(stick1);
-		Inventory stick2 = new Inventory("Pine Stick", sticks);
+		Inventory stick2 = new Inventory("Pine Stick", "Beautiful Stick", sticks);
 		stick2 = inventoryRepo.save(stick2);
-		Inventory dove = new Inventory("Dove Three in One", threeInOne);
+		Inventory dove = new Inventory("Dove Three in One", "Great Wash", threeInOne);
 		dove = inventoryRepo.save(dove);
 	}
 }

@@ -19,12 +19,22 @@
             </ul>
         </section>
         
-        <section class="products-list">
-                <h2>The Cart:</h2>
-                <ul>
-                	<li th:each="product : ${productsModel}"><a th:href="@{'/products/' + ${product.id}}" th:text="${product.name}"></a></li>
+        <div class="products-list">
+        	<h2>The Cart:</h2>
+            <section class="delete-product">
+            	<ul>
+                <li th:each="product: ${productsModel}"><p th:text="'Name:  ' + ${product.name}"/><input type="hidden" th:value="${product.name}"/>
+                <button id="button" th:text="'Remove ' + ${product.name}"></button></li>
                 </ul>
             </section>
+        </div>
+        
+<!--         <section class="products-list"> -->
+<!--                 <h2>The Cart:</h2> -->
+<!--                 <ul th:each="product : ${productsModel}"> -->
+<!--                 	<li ><p th:text="${product.name}"/></li> -->
+<!--                 </ul> -->
+<!--             </section> -->
         
     </div><!-- /.container -->
     

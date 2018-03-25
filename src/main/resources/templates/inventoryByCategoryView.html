@@ -19,17 +19,20 @@
             </ul>
         </section> -->
         
-        <div id="add">
-    	</div>
+        
        	    
         
         <div class="container">
             <section class="add-product">
-            	<ul th:each="inventory: ${inventoryByCategoryModel}">
-                <li><p th:text="${inventory.name}"/><input type="hidden" th:value="${inventory.name}"/>
-                <button id="button">Submit Product</button></li>
+            	<ul>
+                <li th:each="inventory: ${inventoryByCategoryModel}"><p th:text="'Name:  ' + ${inventory.name}"/><p th:text="'Description: ' + ${inventory.description}"/><input type="hidden" th:value="${inventory.name}"/>
+                <button id="button" th:text="'Buy ' + ${inventory.name}"></button></li>
                 </ul>
             </section>
+        </div>
+        
+        <div id="add">
+    	</div>
 <!--             <section class="products-list"> -->
 <!--                 <h2>Here's your cart:</h2> -->
 <!--                 <ul th:each="product : ${productsModel}"> -->
@@ -37,7 +40,7 @@
 <!--                 </ul> -->
 <!--             </section> -->
         
-    </div>
+    
     
     
     <a th:href="@{'/categories'}">Home</a>
