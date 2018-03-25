@@ -9,5 +9,5 @@ xhr.onreadystatechange = function() {
 		body.appendChild(productContainer)
 	}
 }
-xhr.open('GET', '/products/1', true)
+xhr.open('GET', '/categories', true)
 xhr.send()
