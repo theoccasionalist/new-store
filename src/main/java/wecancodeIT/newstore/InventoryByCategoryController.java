@@ -8,18 +8,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class ProductByCategoryController {
+public class InventoryByCategoryController {
 
 	@Resource
 	private CategoryRepository categoryRepo;
 
 	@Resource
-	private ProductRepository productRepo;
+	private InventoryRepository inventoryRepo;
 
-	@RequestMapping("/product-by-category")
+	@Resource
+	ProductRepository productRepo;
+
+	@RequestMapping("/inventory-by-category")
 	public String showProductByCategory(@RequestParam Long id, Model model) {
-		model.addAttribute("productByCategoryModel", productRepo.findAllByCategory(categoryRepo.findOne(id)));
-		return "productByCategoryView";
+		model.addAttribute("inventoryByCategoryModel", inventoryRepo.findAllByCategory(categoryRepo.findOne(id)));
+		model.addAttribute("productsModel", productRepo.findAll());
+		return "inventoryByCategoryView";
 	}
 
 }

@@ -10,16 +10,24 @@
 <body>
     <div class="container">
         <header>
-            <h1>Categories Page</h1>
+            <h1>Categories</h1>
         </header>
         <section>
          	<h2>Categories:</h2>
          	<ul>
-            <li th:each="category : ${categoriesModel}"><a th:href="@{/product-by-category(id=${category.id})}" th:text="${category.name}"></a></li>
+            <li th:each="category : ${categoriesModel}"><a th:href="@{/inventory-by-category(id=${category.id})}" th:text="${category.name}"></a></li>
             </ul>
         </section>
         
+        <section class="products-list">
+                <h2>The Cart:</h2>
+                <ul>
+                	<li th:each="product : ${productsModel}"><a th:href="@{'/products/' + ${product.id}}" th:text="${product.name}"></a></li>
+                </ul>
+            </section>
+        
     </div><!-- /.container -->
+    
 
 <!--     <script src="/catalog/public/js/categories-request.js"></script> -->
 </body>

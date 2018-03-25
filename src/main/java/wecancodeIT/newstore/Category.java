@@ -17,7 +17,7 @@ public class Category {
 	private String name;
 
 	@OneToMany(mappedBy = "category")
-	private Collection<Product> products;
+	private Collection<Inventory> inventory;
 
 	public long getId() {
 		return id;
@@ -27,8 +27,8 @@ public class Category {
 		return name;
 	}
 
-	public Collection<Product> getProducts() {
-		return products;
+	public Collection<Inventory> getInventory() {
+		return inventory;
 	}
 
 	@SuppressWarnings("unused")

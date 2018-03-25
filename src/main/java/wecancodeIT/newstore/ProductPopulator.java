@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class ProductPopulator implements CommandLineRunner {
 
 	@Resource
-	private ProductRepository productRepo;
+	private InventoryRepository inventoryRepo;
 
 	@Resource
 	CategoryRepository categoryRepo;
@@ -20,11 +20,11 @@ public class ProductPopulator implements CommandLineRunner {
 		sticks = categoryRepo.save(sticks);
 		Category threeInOne = new Category("Three in One");
 		threeInOne = categoryRepo.save(threeInOne);
-		Product stick1 = new Product("Oak Stick", sticks);
-		stick1 = productRepo.save(stick1);
-		Product stick2 = new Product("Pine Stick", sticks);
-		stick2 = productRepo.save(stick2);
-		Product dove = new Product("Dove Three in One", threeInOne);
-		dove = productRepo.save(dove);
+		Inventory stick1 = new Inventory("Oak Stick", sticks);
+		stick1 = inventoryRepo.save(stick1);
+		Inventory stick2 = new Inventory("Pine Stick", sticks);
+		stick2 = inventoryRepo.save(stick2);
+		Inventory dove = new Inventory("Dove Three in One", threeInOne);
+		dove = inventoryRepo.save(dove);
 	}
 }
