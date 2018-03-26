@@ -33,4 +33,12 @@ public class ProductController {
 		model.addAttribute("product", productRepo.findOne(Long.parseLong(productId)));
 		return "productView";
 	}
+
+	@RequestMapping(path = "/products/{productName}", method = RequestMethod.DELETE)
+	public String DeleteProduct(@PathVariable String productName, Model model) {
+		productRepo.delete(new Product(productName));
+		model.addAttribute("products", productRepo.findAll());
+		return "products-list";
+		/* return "productByCategoryView"; */
+	}
 }

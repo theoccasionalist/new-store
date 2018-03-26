@@ -18,13 +18,22 @@ public class ProductPopulator implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		Category sticks = new Category("Sticks");
 		sticks = categoryRepo.save(sticks);
-		Category threeInOne = new Category("Three in One");
+		Category threeInOne = new Category("The One");
 		threeInOne = categoryRepo.save(threeInOne);
-		Inventory stick1 = new Inventory("Oak Stick", "Ugly Stick", sticks);
+		Category bots = new Category("Home Assistant Robot");
+		bots = categoryRepo.save(bots);
+		Category food = new Category("Micheal's Favorite");
+		food = categoryRepo.save(food);
+		Inventory stick1 = new Inventory("A Stick", "The only stick you'll ever need.", "/images/stick.png", sticks);
 		stick1 = inventoryRepo.save(stick1);
-		Inventory stick2 = new Inventory("Pine Stick", "Beautiful Stick", sticks);
-		stick2 = inventoryRepo.save(stick2);
-		Inventory dove = new Inventory("Dove Three in One", "Great Wash", threeInOne);
+		Inventory dove = new Inventory("Suave Three in One Body Wash", "The best wash--the only wash.",
+				"/images/three-in-one.jpg", threeInOne);
 		dove = inventoryRepo.save(dove);
+		Inventory robot = new Inventory("The Happy Helper", "The Latest and Greatest in Homecare Assistance",
+				"/images/robot.png", bots);
+		robot = inventoryRepo.save(robot);
+		Inventory melt = new Inventory("Melt's Barbeque Tofu Wings", "Better than Beef", "/images/melt.jpg", food);
+		melt = inventoryRepo.save(melt);
+
 	}
 }

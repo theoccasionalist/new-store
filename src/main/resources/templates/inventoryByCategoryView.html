@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Products Page</title>
-    <link rel="stylesheet" href="/catalog/css/styles.css" />
+    <link rel="stylesheet" href="/catalog/css/style.css" />
 </head>
 <body>
     
-        <header>
-            <h1>Products Page</h1>
+        <header class ="header" th:each="product: ${inventoryByCategoryModel}">
+            <h1 th:text="${product.name}"></h1>
         </header>
+        <div id="relative-2">
+        <img src="/images/flying=hamster-thing.gif" id="hamster"></img>
+		</div>      
       <!--   <section>
          	<h2>Products:</h2>
          	<ul th:each="inventory : ${inventoryByCategoryModel}">
@@ -22,10 +25,10 @@
         
        	    
         
-        <div class="container">
+        <div class="products-list">
             <section class="add-product">
             	<ul>
-                <li th:each="inventory: ${inventoryByCategoryModel}"><p th:text="'Name:  ' + ${inventory.name}"/><p th:text="'Description: ' + ${inventory.description}"/><input type="hidden" th:value="${inventory.name}"/>
+                <li th:each="inventory: ${inventoryByCategoryModel}"><p th:text="${inventory.description}"/><img th:src="${inventory.image}" id="product-pic"></img><br></br><input type="hidden" th:value="${inventory.name}"/>
                 <button id="button" th:text="'Buy ' + ${inventory.name}"></button></li>
                 </ul>
             </section>
@@ -33,6 +36,10 @@
         
         <div id="add">
     	</div>
+    	
+    	<div id="relative-4">
+        <img src="/images/pusheen.gif" id="pusheen"></img>
+		</div>  
 <!--             <section class="products-list"> -->
 <!--                 <h2>Here's your cart:</h2> -->
 <!--                 <ul th:each="product : ${productsModel}"> -->
@@ -42,9 +49,9 @@
         
     
     
-    
+    <div class="home">
     <a th:href="@{'/categories'}">Home</a>
-    
+    </div>
 	<script src="./catalog/public/js/button.js"></script>
     <script src="./catalog/public/js/my-requests.js"></script>
         

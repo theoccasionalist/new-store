@@ -9,8 +9,8 @@ xhr.onreadystatechange = function() {
 	}
 }
 
-productAddButton.addEventListener('click', function() {
-	postProducts(productDeleteInput.value)
+productDeleteButton.addEventListener('click', function() {
+	deleteProducts(productDeleteInput.value)
 })
 
 function getProducts() {

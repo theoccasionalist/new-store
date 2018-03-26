@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Space+Mono');
+
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -8,27 +11,41 @@ html {
 	font: 20px/1.618em sans-serif;
 }
 
+.header {
+	text-align: center;
+	font-family: 'Dancing Script', cursive;
+}
+
 a {
 	color: #39add1;
 	text-decoration: none;
 }
 h1, h2 {
 	border-bottom: 1px solid #999;
-	margin: 0.5em 1em;
 	padding-bottom: 0.5em;
+	padding-top:0.5em;
+}
+
+h2 {
+	font-family: 'Space Mono', monospace;
 }
 ul {
 	list-style-type: none;
 	margin: 1em 0;
 }
 li {
-	border-left: 5px solid #39add1;
+	border-left: 10px solid #39add1;
 	padding: 0.5em 1em;
+	
 }
 li a {
 	border-radius: 5px;
 	display: block;
 	padding: 0.5em 1em;
+}
+
+li:nth-child(odd) a {
+	background-color: #d3bbd7;
 }
 li:nth-child(even) a {
 	background-color: #eee;
@@ -53,8 +70,162 @@ li:nth-child(even) a {
 		color: white;
 		padding: 0.25em 0.5em;
 	}
-.container {
-	margin: 0 auto;
-	max-width: 1000px;
-	width: 90%;
+	
+	.delete-product button {
+		background-color: #39add1;
+		border: none;
+		border-radius: 0 5px 5px 0;
+		color: white;
+		padding: 0.25em 0.5em;
+	}
+
+#relative {
+	position: relative;
+	/* overflow:hidden; */
 }
+
+#pennywise {
+	position: absolute;
+
+	right: 10px;
+    animation-duration: 12s;
+    animation-name: float; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+	overflow: hidden;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(30em);
+    }
+
+    to {
+        transform: translateY(-70em);
+    }
+}
+
+#relative-2 {
+	position:relative;
+}
+
+#hamster {
+	position:absolute;
+	z-index: -1;
+	right: 10px;
+}
+
+#relative-3 {
+	position: relative;
+}
+
+.cat {
+	position: absolute;
+	height: 80px;
+	width: 160px;
+	z-index: -1;
+	top: -20px;;
+}
+
+#cat1 {
+	position: absolute;
+    animation-duration: 5s;
+    animation-name: run; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+	overflow: hidden;
+}
+
+@keyframes run {
+    from {
+        transform: translateX(-8em);
+    }
+
+    to {
+        transform: translateX(52em);
+    }
+}
+
+#cat2 {
+	position: absolute;
+    animation-duration: 4s;
+    animation-name: run1; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+	overflow: hidden;
+}
+
+@keyframes run1 {
+    from {
+        transform: translateX(47em);
+    }
+
+    to {
+        transform: translateX(-10em);
+    }
+}
+
+#cat3 {
+	position: absolute;
+    animation-duration: 4s;
+    animation-name: run2; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+	overflow: hidden;
+}
+
+@keyframes run2 {
+    from {
+        transform: translateX(-12em);
+    }
+
+    to {
+        transform: translateX(52em);
+    }
+}
+
+#cat4 {
+	position: absolute;
+    animation-duration: 3s;
+    animation-name: run3; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+	overflow: hidden;
+}
+
+@keyframes run3 {
+    from {
+        transform: translateX(54em);
+    }
+
+    to {
+        transform: translateX(-7em);
+    }
+}
+
+#relative-4 {
+	position:relative;
+}
+
+#pusheen {
+	position:absolute;
+	bottom: -200px;
+}
+
+#product-pic {
+	height: 13em;
+	width: 7em;
+}
+
+#add {
+	text-align: center;
+}
+
+.home {
+	text-align: center;
+}
+
+.home a:hover {
+	color: green;
+}
+

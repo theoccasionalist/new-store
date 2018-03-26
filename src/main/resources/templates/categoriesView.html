@@ -5,29 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Products Page</title>
-    <link rel="stylesheet" href="/catalog/css/styles.css" />
+    <link rel="stylesheet" href="./catalog/css/style.css" />
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Categories</h1>
-        </header>
+    <div>
+    	<header class="header"><h1>Fundamentally Broken: A Store for All</h1></header>
         <section>
-         	<h2>Categories:</h2>
+            <h2>Catalog<span id="relative-3"><img src="/images/cat1.gif" class="cat" id="cat1"></img><img src="/images/cat2.gif" class="cat" id="cat2"></img><img src="/images/cat1.gif" class="cat" id="cat3"></img><img src="/images/cat2.gif" class="cat" id="cat4"></img></span></h2>
+        </section>
+        <section>
          	<ul>
             <li th:each="category : ${categoriesModel}"><a th:href="@{/inventory-by-category(id=${category.id})}" th:text="${category.name}"></a></li>
             </ul>
         </section>
-        
-        <div class="products-list">
-        	<h2>The Cart:</h2>
+        <div id="relative">
+		<img src="/images/pennywise-float.gif" id="pennywise"></img>
+		</div>
+        	<h2>The Cart of Wonders</h2>
+        	<div class="products-list">
             <section class="delete-product">
             	<ul>
-                <li th:each="product: ${productsModel}"><p th:text="'Name:  ' + ${product.name}"/><input type="hidden" th:value="${product.name}"/>
+                <li th:each="product: ${productsModel}"><p th:text="'One Order of:  ' + ${product.name}"/><input type="hidden" th:value="${product.name}"/>
                 <button id="button" th:text="'Remove ' + ${product.name}"></button></li>
                 </ul>
             </section>
-        </div>
+            </div>
+<!--         </div> -->
         
 <!--         <section class="products-list"> -->
 <!--                 <h2>The Cart:</h2> -->
@@ -38,7 +41,7 @@
         
     </div><!-- /.container -->
     
-
-<!--     <script src="/catalog/public/js/categories-request.js"></script> -->
+	
+    <script src="./catalog/public/js/my-requests-delete.js"></script>
 </body>
 </html>

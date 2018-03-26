@@ -1,4 +1,15 @@
-<ul th:each="product: ${products}">
-	<li th:text="${product.name}"></li>
-</ul>
+<div class="products-list">
+            <section class="delete-product">
+            	<ul>
+                <li th:each="product: ${productsModel}"><p th:text="'Name:  ' + ${product.name}"/><input type="hidden" th:value="${product.name}"/>
+                <button id="button" th:text="'Remove ' + ${product.name}"></button></li>
+                </ul>
+            </section>
+            </div>
+
+<!-- <div class="products-list"> -->
+<!-- <ul th:each="product: ${products}"> -->
+<!-- 	<li th:text="${product.name}"></li> -->
+<!-- </ul> -->
+<!-- </div> -->
 <!-- <li th:each="product : ${products}"><a th:href="@{'/products/' + ${product.id}}" th:text="${product.name}"></a></li> -->
