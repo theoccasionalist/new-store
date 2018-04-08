@@ -12,7 +12,7 @@
   <li>CSS3 (with CSS animations)</li>
   <li>JavaScript</li>
   <li>Ajax requests</li>
-  <li>Tdd with JUnit and Mockito</li>
+  <li>TDD with JUnit and Mockito</li>
 </ul>
 
 ### Store Front Categories (with Empty Cart):
