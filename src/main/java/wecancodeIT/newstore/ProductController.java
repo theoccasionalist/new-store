@@ -36,7 +36,9 @@ public class ProductController {
 
 	@RequestMapping(path = "/products/{productName}", method = RequestMethod.DELETE)
 	public String DeleteProduct(@PathVariable String productName, Model model) {
-		productRepo.delete(new Product(productName));
+		Product newGuy = productRepo.findByName(productName);
+		Long id = newGuy.getId();
+		productRepo.delete(id);
 		model.addAttribute("products", productRepo.findAll());
 		return "products-list";
 		/* return "productByCategoryView"; */
